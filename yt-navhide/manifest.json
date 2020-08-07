@@ -1,0 +1,48 @@
+{
+	"name":"navhide",
+	"version":"0.2",
+	"description":"oculta a navbar do youtube",
+	"manifest_version":2,
+
+	"permissions":[
+		"activeTab", 
+		"declarativeContent",
+		"tabs", 
+		"storage",
+		"unlimited_storage",
+		"notifications",
+		"contextMenus",
+		"cookies",
+		"idle"
+	],
+
+	"content_scripts":[
+		{
+			"matches":[
+				"*://*.youtube.com/watch?v=???????????",
+				"*://*.youtube.com/*",
+				"https://*.youtube.com/*",
+
+				"*://*.udemy.com/*",
+				"https://*.udemy.com/*"
+			],
+			"css":["style.css"],
+			"js":["content.js"],
+			"run_at": "document_idle",
+			"persistent": false
+
+		}
+	],
+
+	"browser_action":{
+		"default_icon": {
+			"16": "navhide2.png",
+			"32": "navhide2.png",
+			"48": "navhide2.png",
+			"128": "navhide2.png"
+		}
+	}
+
+
+
+}
